@@ -1,5 +1,33 @@
 <div class="h1">Hola Mundo</div>
-<h2>{{'hola mundo'.repeat(5)}}</h2>
-<p>3 + 3 =  {{3+3}}</p>
-<h3>Hola, soy {{ name }} y tengo {{age}}</h3>
-<img src={{img}} alt="image"/>
+<button [disabled]="btnDisabled" >Enviar</button>
+<!-- el event binding sirve para usar el evento de una etiqueta y asignarle una funcion -->
+<button (click)="toggleButton()" >ToggleButton</button>
+<button (click)="increaseAge()">Age +</button>
+
+<input type="text" [value]="person.name" (keyup)="changeName($event)"/>
+
+<div class="box" (scroll)="onScroll($event)">
+<p>tros eventos que puedes escuchar
+  Una forma común de manejar eventos es pasar el “objeto de evento” $event, donde se capturan eleentos del DOM, por lo general este evento contiene la informacion que debemos procesar en el metodo.
+
+  Conviene conocer los objetos del evento DOM Event reference
+
+  Tenga en cuenta el contexto de ejecución
+
+  Las propiedades de un $event (objeto) varían según el tipo de evento DOM. Por ejemplo, un evento de mouse incluye información diferente a la de un evento de edición de cuadro de entrada.
+
+  Podemos escuchar el scroll con el siguiente codigo
+
+
+  Podemos leer las teclas que se estan digitando a medida que estas son digitadas, esto lo hacemos con
+  </p>
+</div>
+<!-- property binding trae tambien variables de component en estos[] la diferencia es que estos traen especificamente propiedades y string interpolation trae algo que debe ser renderizado -->
+<progress max="100" [value]="person.age"></progress>
+<img width="100" [src]="img" />
+<hr />
+<h2>{{ "hola mundo".repeat(5) }}</h2>
+<p>3 + 3 = {{ 3 + 3 }}</p>
+<h3>Hola, soy {{ name }} y tengo {{ age }}</h3>
+<!-- string interpolation trae las variables creadas en el component con {{}} -->
+<img src="{{ img }}" alt="image" />
