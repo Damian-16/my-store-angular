@@ -10,5 +10,5 @@ export class AppComponent {
   private names = 'nombre privado ';
   name = 'Nicolas';
   age = 28;
-  //img = 'https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg';
+  img = 'https://source.unsplash.com/random'
 }
