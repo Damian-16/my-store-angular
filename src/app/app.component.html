@@ -22,6 +22,21 @@
    <!-- tambien ng model puede hacer validaciones de html como en este caso valid si es required -->
 <p>Valid: {{ nameInput.valid}}</p>
 <label>Nombre {{person.name}}</label>
+<!-- uso de el ngSwitch -->
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase="'reberto'">
+      El  reberto
+  </p>
+  <p *ngSwitchCase="'nicolas'">
+      El nicolas
+  </p>
+  <p *ngSwitchCase="'damian'">
+      El damian
+  </p>
+  <p *ngSwitchDefault>
+      No hace match
+  </p>
+</div>
 <div class="box" (scroll)="onScroll($event)">
 <p>tros eventos que puedes escuchar
   Una forma común de manejar eventos es pasar el “objeto de evento” $event, donde se capturan eleentos del DOM, por lo general este evento contiene la informacion que debemos procesar en el metodo.
@@ -47,3 +62,12 @@
 <h3>Hola, soy {{ name }} y tengo {{ age }}</h3>
 <!-- string interpolation trae las variables creadas en el component con {{}} -->
 <img src="{{ img }}" alt="image" />
+
+
+<h1>*ngFor para objetos</h1>
+<div *ngFor="let product of products">
+  <img width="200" [src]="product.image"/>
+  <h2>{{product.price}}</h2>
+  <p>{{product.name}}</p>
+
+</div>
