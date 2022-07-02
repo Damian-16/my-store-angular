@@ -1,11 +1,27 @@
 <div class="h1">Hola Mundo</div>
+<p *ngIf="person.name === 'nicolas'">soy nicolas</p>
+<p *ngIf="person.name === 'Damian' && person.age === 30; else elseBlock">kun</p>
+<ng-template #elseBlock>
+  <p>bloque de else</p>
+</ng-template>
+<ul>
+  <li *ngFor="let name of namess; index as i">
+    {{i}} {{name}}
+    <button (click)="deleteName(i)">Borrar</button>
+  </li>
+</ul>
+<input #nameInput="ngModel" type="text" required [(ngModel)]="newName" (keyup)="changeName($event)"/>
+<button (click)="addName()">Add Name</button>
+<hr/>
 <button [disabled]="btnDisabled" >Enviar</button>
 <!-- el event binding sirve para usar el evento de una etiqueta y asignarle una funcion -->
 <button (click)="toggleButton()" >ToggleButton</button>
 <button (click)="increaseAge()">Age +</button>
-
-<input type="text" [value]="person.name" (keyup)="changeName($event)"/>
-
+  <!-- con el ng model hacemos el seteo y el evento al mismo tiempo pero debe ser importado en el app.modules -->
+<input #nameInput="ngModel" type="text" required [(ngModel)]="person.name" (keyup)="changeName($event)"/>
+   <!-- tambien ng model puede hacer validaciones de html como en este caso valid si es required -->
+<p>Valid: {{ nameInput.valid}}</p>
+<label>Nombre {{person.name}}</label>
 <div class="box" (scroll)="onScroll($event)">
 <p>tros eventos que puedes escuchar
   Una forma común de manejar eventos es pasar el “objeto de evento” $event, donde se capturan eleentos del DOM, por lo general este evento contiene la informacion que debemos procesar en el metodo.

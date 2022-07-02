@@ -16,6 +16,8 @@ export class AppComponent {
     name:'Damian',
     age:29,
   }
+ namess: string[]=['Nico','Juli','sonic'];
+ newName = '';
 
   toggleButton(){
     this.btnDisabled = !this.btnDisabled;
@@ -31,4 +33,12 @@ export class AppComponent {
     const element = event.target as HTMLInputElement;
     this.person.name = element.value;
   }
-}
+  addName(){
+    this.namess.push(this.newName);
+    this.newName = '';
+   }
+  deleteName(index: number){
+    this.namess.splice(index , 1) // el valor a eliminar y cuantos voy a  eliminar a partir de
+  }
+
+  }
