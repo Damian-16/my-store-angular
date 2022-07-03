@@ -10,7 +10,7 @@
     <button (click)="deleteName(i)">Borrar</button>
   </li>
 </ul>
-<input #nameInput="ngModel" type="text" required [(ngModel)]="newName" (keyup)="changeName($event)"/>
+<input #nameInput2="ngModel" type="text" required [(ngModel)]="newName" (keyup)="changeName($event)"/>
 <button (click)="addName()">Add Name</button>
 <hr/>
 <button [disabled]="btnDisabled" >Enviar</button>
@@ -18,8 +18,11 @@
 <button (click)="toggleButton()" >ToggleButton</button>
 <button (click)="increaseAge()">Age +</button>
   <!-- con el ng model hacemos el seteo y el evento al mismo tiempo pero debe ser importado en el app.modules -->
+
 <input #nameInput="ngModel" type="text" required [(ngModel)]="person.name" (keyup)="changeName($event)"/>
-   <!-- tambien ng model puede hacer validaciones de html como en este caso valid si es required -->
+ <!-- con el class binding podemos cambiar las clases dinamicamente al setearlo y agregandole validaciones-->
+<p class="message-error" [class.invalid]="nameInput.invalid">Campo es requerido</p>
+<!-- tambien ng model puede hacer validaciones de html como en este caso valid si es required -->
 <p>Valid: {{ nameInput.valid}}</p>
 <label>Nombre {{person.name}}</label>
 <!-- uso de el ngSwitch -->

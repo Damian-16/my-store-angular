@@ -1,0 +1,38 @@
+.box
+{
+  height: 100px;
+  width: 100px;
+  overflow: auto;
+}
+.products--grid {
+  display: grid;
+  flex-direction: column;
+  div{
+    img{
+      width: 100%;
+      border-radius:10px;
+    }
+    h2,p{
+      margin: 0;
+    }
+  }
+
+}
+.message-error {
+  background:red;
+  color:white;
+  opacity: 0;
+  transition: all linear .5s;
+  &.invalid{
+    opacity: 1;
+  }
+}
+
+@media screen  and (min-width: 40em){
+  .products--grid {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 15px;
+  }
+
+}
