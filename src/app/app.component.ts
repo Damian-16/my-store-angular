@@ -12,6 +12,8 @@ export class AppComponent {
   name = 'Nicolas';
   age = 28;
   img = 'https://source.unsplash.com/random';
+  widthImg = 10;
+
   btnDisabled = true;
   person={
     name:'Damian',
@@ -19,6 +21,7 @@ export class AppComponent {
   }
  namess: string[]=['Nico','Juli','sonic'];
  newName = '';
+
 
   toggleButton(){
     this.btnDisabled = !this.btnDisabled;
