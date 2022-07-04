@@ -27,6 +27,15 @@ box = {
   background:'red',
 }
 
+register= {
+  name:'',
+  email:'',
+  password:'',
+}
+onRegister(){
+  console.log(this.register);
+}
+
   toggleButton(){
     this.btnDisabled = !this.btnDisabled;
   }

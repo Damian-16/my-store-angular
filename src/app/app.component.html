@@ -101,3 +101,22 @@
 
   </div>
 </div>
+<h1>Formulario</h1>
+<form (ngSubmit)="onRegister()"#myForm="ngForm">
+  <div class="input-group">
+    <label for="name">Nombre</label>
+    <input name="name" type="text" required [(ngModel)]="register.name"/>
+    <p>Mensaje de  Error</p>
+  </div>
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input name="mail" type="email" required [(ngModel)]="register.email"/>
+    <p>Mensaje de  Error</p>
+  </div>
+  <div class="input-group">
+    <label for="password">Password</label>
+    <input name="pass" type="password" required [(ngModel)]="register.password"/>
+    <p>Mensaje de  Error</p>
+  </div>
+  <button [disabled]="myForm.invalid" type="submit">Registrar</button>
+</form>
