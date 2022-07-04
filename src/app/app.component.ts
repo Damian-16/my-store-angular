@@ -21,7 +21,11 @@ export class AppComponent {
   }
  namess: string[]=['Nico','Juli','sonic'];
  newName = '';
-
+box = {
+  width:10,
+  height:100,
+  background:'red',
+}
 
   toggleButton(){
     this.btnDisabled = !this.btnDisabled;

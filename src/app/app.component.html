@@ -86,4 +86,18 @@
   <h2>{{product.price}}</h2>
   <p>{{product.name}}</p>
 
+  <div class="styles">
+    <input type="text"  [(ngModel)]="box.width"/>
+    <input type="number" [(ngModel)]="box.height"/>
+    <input type="color" [(ngModel)]="box.background"/>
+  </div>
+  <div>
+    <div [ngStyle]="{
+      'width.px' : box.width,
+      'height.px' : box.height,
+      'background-color' : box.background,
+      'display' : 'block'
+    }"></div>
+
+  </div>
 </div>
