@@ -3,3 +3,5 @@
 <!-- el componente recibe con @Input este valor y lo imprime -->
 <app-img (loaded)="onLoaded($event)"[img]="img" ></app-img>
 <input type="text" [(ngModel)]="img">
+
+<app-product [product]="product" *ngFor="let product of products"></app-product>
