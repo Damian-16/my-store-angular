@@ -1,5 +1,5 @@
 <input type="text" [(ngModel)]="imgParent">
 <!-- <app-img img="este valor viene del padre" ></app-img> -->
 <!-- el componente recibe con @Input este valor y lo imprime -->
-<app-img [img]="img" ></app-img>
+<app-img (loaded)="onLoaded($event)"[img]="img" ></app-img>
 <input type="text" [(ngModel)]="img">
