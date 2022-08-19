@@ -2,6 +2,7 @@
 <!-- viene desde el padre -->
 <!-- <h1>{{img}}</h1> -->
 <img  width="200" (load)="imgLoaded()"(error)="imgError()" [src]="img" *ngIf="img; else elseImg">
+{{counter}}
 <ng-template #elseImg>
   <img src="./assets/images/default.png" alt="maldicion">
 </ng-template>

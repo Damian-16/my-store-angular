@@ -9,6 +9,7 @@ import { Product } from './models/product.model';
 })
 export class AppComponent {
   imgParent: string = 'valor escuchado con ngmodel';
+  showImg = true;
 //https://www.w3schools.com/howto/img_avatar.png
   img: string = '';
   products:Product[] = [ {
@@ -51,6 +52,9 @@ export class AppComponent {
     console.log("log padre",img);
     //el padre esta escuchando al hijo cuando este publique ese evento
     //se recibe la variable img y la metemos en un console
+  }
+  toggleImg(){
+    this.showImg = !this.showImg;
   }
 
   }
