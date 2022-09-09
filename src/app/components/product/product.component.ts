@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,Output,EventEmitter } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 
 @Component({
@@ -13,11 +13,17 @@ export class ProductComponent implements OnInit {
     name:'',
     image:'',
   }
-  //siempre se inicializa pues is se deja vacio da error
+  //siempre se inicializa pues si se deja vacio da error
+
+  @Output() addedProduct = new EventEmitter();
+  //este es el objeto q  le mandaremos al padre
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  onAddToCart() {
+   this.addedProduct.emit(this.product)
   }
 
 }

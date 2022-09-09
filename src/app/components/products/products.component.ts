@@ -12,6 +12,8 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  myShoppingCart:Product[] = [];
+  total = 0;
   products:Product[] = [ {
     id: '1',
     name: 'EL mejor juguete',
@@ -48,4 +50,10 @@ export class ProductsComponent implements OnInit {
     price: 82,
     image: 'https://static.platzi.com/media/user_upload/glasses-05350737-5831-4c98-be55-824399206dba.jpg'
   },];
+
+  onAddToShoppingCart (product:Product){
+   console.log(product);
+   this.myShoppingCart.push(product);//agregamos productos al carrito
+   this.total = this.myShoppingCart.reduce((sum,item)=> sum + item.price,0);//de esta manera sumamos el total tambien otra manera de hacerlo es this.total += product.price;
+  }
 }
