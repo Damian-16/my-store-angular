@@ -3,3 +3,5 @@
 <!-- el componente recibe con @Input este valor y lo imprime -->
 <app-img (loaded)="onLoaded($event)"[img]="img" ></app-img>
 <input type="text" [(ngModel)]="img">
+<p>fecha:{{today | date}}</p>
+<p>otra fecha:{{otherDate | date: "short"}}</p>

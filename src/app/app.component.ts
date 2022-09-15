@@ -16,4 +16,8 @@ export class AppComponent {
     //se recibe la variable img y la metemos en un console
   }
 
+
+  //pipes de fecha (los pipes solo se utilizan en render NO AQUI)
+  today = new Date();
+  otherDate = new Date(1992,9,21);
   }
