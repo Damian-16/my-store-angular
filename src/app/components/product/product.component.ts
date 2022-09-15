@@ -10,8 +10,10 @@ export class ProductComponent implements OnInit {
   @Input() product : Product = {
     id:'',
     price:0,
-    name:'',
+    title:'',
     image:'',
+    description:'',
+    category:'',
   }
   //siempre se inicializa pues si se deja vacio da error
 
