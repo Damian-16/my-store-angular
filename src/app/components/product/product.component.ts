@@ -18,6 +18,8 @@ export class ProductComponent implements OnInit {
   //siempre se inicializa pues si se deja vacio da error
 
   @Output() addedProduct = new EventEmitter();
+  @Output() removedProduct = new EventEmitter<Product>();
+
   //este es el objeto q  le mandaremos al padre
 
   constructor() { }
@@ -26,6 +28,9 @@ export class ProductComponent implements OnInit {
   }
   onAddToCart() {
    this.addedProduct.emit(this.product)
+  }
+  onRemoveFromCart() {
+    this.removedProduct.emit(this.product);
   }
 
 }

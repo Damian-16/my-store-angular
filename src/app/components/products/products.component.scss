@@ -1,8 +1,14 @@
 .products--grid {
   display: flex;
   flex-direction: column;
+  background-color: beige;
 }
-
+p{
+  font-size: 1.5em;
+}
+strong{
+  color:green
+}
 //tablets
 @media screen and (min-width: 40em) and (max-width:63.9em) {
 .products--grid{

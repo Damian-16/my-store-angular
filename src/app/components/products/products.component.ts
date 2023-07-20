@@ -36,4 +36,9 @@ products:Product[] = [];//esto lo ponemos como un array vacio y nos deshacemos d
   this.total = this.storeService.getTotal();
 
   }
+  onRemoveFromShoppingCart(product: Product) {
+    this.storeService.removeProduct(product);
+    this.total = this.storeService.getTotal();
+  }
+
 }
